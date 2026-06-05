@@ -124,6 +124,7 @@ class TestQueueTest {
         Assertions.assertEquals(Thread.State.WAITING,thread.getState());
         queue.put(1);
         latch.await();
+        thread.join();
         Assertions.assertEquals(Thread.State.TERMINATED,thread.getState());
     }
 
